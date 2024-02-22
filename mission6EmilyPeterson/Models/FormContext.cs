@@ -9,6 +9,7 @@ namespace mission6EmilyPeterson.Models
         }
 
         //database set
-        public DbSet<Form> Forms { get; set; }  
+        public DbSet<Movie> Movies { get; set; }  
+        public DbSet<Category> Categories { get; set; }
     }
 }

@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\lib\bootstrap-5.3.3-dist\**" />
+    <Content Remove="wwwroot\lib\bootstrap-5.3.3-dist\**" />
+    <EmbeddedResource Remove="wwwroot\lib\bootstrap-5.3.3-dist\**" />
+    <None Remove="wwwroot\lib\bootstrap-5.3.3-dist\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\img\JoelHiltonHeadshot.jpg" />
   </ItemGroup>
 
