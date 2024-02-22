@@ -6,12 +6,15 @@
 
 @model Movie
 
-<h2>Confirm Deletion</h2>
+<h2>Confirm Deletion of:</h2>
 <h3>@Model.Title</h3>
+<br />
 
-<input type="hidden" asp-for="MovieId" />
+
 
 <form method="post">
+    <input type="hidden" asp-for="MovieId" />
+
     <button type="submit">Delete</button>
-    <a class="btn btn-info" asp-controller="Home" asp-action="Waitlist">Cancel</a>
+    <a class="btn btn-info" asp-controller="Home" asp-action="MovieView">Cancel</a>
 </form>

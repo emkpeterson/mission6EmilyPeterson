@@ -30,16 +30,28 @@ namespace mission6EmilyPeterson.Controllers
                 .OrderBy(x => x.CategoryName)
                 .ToList();
 
-            return View();
+            return View(new Movie());
         }
 
         [HttpPost]
         public IActionResult Movie(Movie response) 
         {
-        _context.Movies.Add(response); //add record to database
-        _context.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _context.Movies.Add(response); //add record to database
+                _context.SaveChanges();
 
-        return View("Confirmation", response);
+                return View("Confirmation", response);
+            }
+            else
+            {
+                ViewBag.Categories = _context.Categories
+                    .OrderBy(x => x.CategoryName)
+                    .ToList();
+
+                return View(response);
+            }
+
         }
 
         public IActionResult MovieView()
@@ -74,7 +86,7 @@ namespace mission6EmilyPeterson.Controllers
             _context.Update(updatedInfo);
             _context.SaveChanges();
 
-            return Redirect("MovieView");
+            return RedirectToAction("MovieView");
         }
 
         [HttpGet]

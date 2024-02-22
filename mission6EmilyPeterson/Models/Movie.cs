@@ -18,7 +18,7 @@ namespace mission6EmilyPeterson.Models
 
         [Required(ErrorMessage = "Year is required")]
         [Range(1888, int.MaxValue, ErrorMessage = "Year must be 1888 or later")]
-        public int Year { get; set; }
+        public int? Year { get; set; } = 2000;
 
         public string? Director { get; set; }
         public string? Rating { get; set; }

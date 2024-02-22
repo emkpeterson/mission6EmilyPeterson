@@ -7,7 +7,7 @@
 @model Movie
 <h1>Enter Movies into the Collection</h1>
 
-<form method="post">
+<form method="post" class="form-control">
 
     <input type="hidden" asp-for="MovieId"/>
 
@@ -57,4 +57,7 @@
     <br /> 
 
     <button type="submit">Submit Form</button>
+
+    <br />
+    <div asp-validation-summary="All"></div>
 </form>
